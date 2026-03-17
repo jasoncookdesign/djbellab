@@ -2,362 +2,271 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DJ Bella~B | Coming Soon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BELLA~B | Tech House DJ</title>
   <meta
     name="description"
-    content="Official site for DJ Bella~B / B². New site coming soon."
+    content="Official site of BELLA~B, Denver-rooted tech house DJ with momentum in Austin. Club-ready sets, mixes, gallery, and booking info."
   />
-  <style>
-    :root {
-      --bg: #090909;
-      --panel: rgba(255, 255, 255, 0.05);
-      --panel-strong: rgba(255, 255, 255, 0.08);
-      --text: #f5f5f5;
-      --muted: #b8b8c2;
-      --pink: #ff4fb3;
-      --pink-soft: #ff8bcc;
-      --silver: #c9c9cf;
-      --grey: #7f7f88;
-      --line: rgba(255, 255, 255, 0.12);
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-      --radius: 24px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      min-height: 100%;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(255, 79, 179, 0.18), transparent 34%),
-        radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.08), transparent 30%),
-        linear-gradient(180deg, #111111 0%, #090909 100%);
-      color: var(--text);
-    }
-
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-    }
-
-    .wrap {
-      width: 100%;
-      max-width: 980px;
-    }
-
-    .card {
-      position: relative;
-      overflow: hidden;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03)),
-        rgba(0,0,0,0.55);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      -webkit-backdrop-filter: blur(8px);
-      backdrop-filter: blur(8px);
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(125deg, rgba(255, 79, 179, 0.10), transparent 28%, transparent 72%, rgba(201, 201, 207, 0.08)),
-        repeating-linear-gradient(
-          90deg,
-          transparent 0,
-          transparent 22px,
-          rgba(255,255,255,0.02) 22px,
-          rgba(255,255,255,0.02) 23px
-        );
-      pointer-events: none;
-    }
-
-    .inner {
-      position: relative;
-      z-index: 1;
-      padding: 44px 28px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: var(--panel);
-      border: 1px solid var(--line);
-      color: var(--silver);
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--pink);
-      box-shadow: 0 0 16px rgba(255, 79, 179, 0.9);
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(2.5rem, 10vw, 5.8rem);
-      line-height: 0.92;
-      letter-spacing: -0.04em;
-      font-weight: 900;
-      text-transform: uppercase;
-    }
-
-    .name-main {
-      display: block;
-      color: #ffffff;
-    }
-
-    .name-accent {
-      display: block;
-      color: var(--pink);
-      text-shadow: 0 0 28px rgba(255, 79, 179, 0.25);
-    }
-
-    .sub {
-      max-width: 700px;
-      margin-top: 22px;
-      font-size: clamp(1rem, 2.6vw, 1.2rem);
-      line-height: 1.65;
-      color: var(--muted);
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 24px;
-      align-items: stretch;
-    }
-
-    .hero-copy {
-      min-width: 0;
-    }
-
-    .artist-photo-wrap {
-      position: relative;
-      border-radius: 20px;
-      border: 1px solid var(--line);
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
-      overflow: hidden;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
-      min-height: 360px;
-    }
-
-    .artist-photo-wrap::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0 0;
-      height: 42%;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(9, 9, 9, 0.65));
-      pointer-events: none;
-    }
-
-    .artist-photo {
-      width: 100%;
-      height: 100%;
-      min-height: 360px;
-      object-fit: cover;
-      display: block;
-      transform: scale(1.02);
-    }
-
-    .photo-label {
-      position: absolute;
-      left: 14px;
-      bottom: 14px;
-      z-index: 1;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.52);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: var(--silver);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 0.74rem;
-      font-weight: 700;
-    }
-
-    .sub strong {
-      color: var(--text);
-      font-weight: 700;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1.35fr 0.95fr;
-      gap: 18px;
-      margin-top: 34px;
-    }
-
-    .panel {
-      padding: 22px;
-      border-radius: 20px;
-      background: var(--panel);
-      border: 1px solid var(--line);
-    }
-
-    .panel h2 {
-      margin: 0 0 10px;
-      font-size: 0.92rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--silver);
-      font-weight: 700;
-    }
-
-    .panel p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    .launch {
-      display: inline-block;
-      margin-top: 26px;
-      padding: 14px 18px;
-      border-radius: 14px;
-      background: linear-gradient(180deg, var(--pink), var(--pink-soft));
-      color: #14060f;
-      text-decoration: none;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      box-shadow: 0 10px 24px rgba(255, 79, 179, 0.25);
-    }
-
-    .meta {
-      margin-top: 24px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .chip {
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: var(--panel-strong);
-      border: 1px solid var(--line);
-      color: var(--silver);
-      font-size: 0.9rem;
-    }
-
-    .footer {
-      margin-top: 22px;
-      color: var(--grey);
-      font-size: 0.92rem;
-    }
-
-    .footer a {
-      color: var(--pink-soft);
-      text-decoration: none;
-    }
-
-    @media (max-width: 760px) {
-      .inner {
-        padding: 30px 20px;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .artist-photo-wrap,
-      .artist-photo {
-        min-height: 300px;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      h1 {
-        font-size: clamp(2.4rem, 16vw, 4rem);
-      }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="wrap">
-    <section class="card">
-      <div class="inner">
-        <div class="eyebrow">
-          <span class="dot"></span>
-          Official site launching soon
-        </div>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="wordmark" href="index.html">Bella~B <span class="accent">(AKA B²)</span></a>
+        <nav class="site-nav" aria-label="Primary">
+          <a class="nav-link" href="releases.html">Releases</a>
+          <a class="nav-link" href="mixtapes.html">Mixtapes</a>
+          <a class="nav-link" href="#calendar">Calendar</a>
+          <a class="nav-link" href="gallery.html">Gallery</a>
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="press.html">Press</a>
+          <a class="button button--primary" href="mailto:booking@djbellab.com">Book</a>
+        </nav>
+      </div>
+    </header>
 
-        <div class="hero">
-          <div class="hero-copy">
+    <main>
+      <section class="section hero-stage" id="top">
+        <div class="container hero-grid reveal">
+          <article class="glass-panel hero-copy">
+            <p class="hero-kicker">Denver / Austin</p>
             <h1>
-              <span class="name-accent">B²</span>
-              <span class="name-main">Bella~B</span>
+              <span class="hero-display hero-name-main">BELLA~B</span>
+              <span class="hero-display-accent hero-name-accent">(AKA B²)</span>
             </h1>
+            <p class="hero-descriptor">Tech House Recording Artist & DJ — Festivals · Nightclubs · Afterhours</p>
+            <div class="hero-actions">
+              <a class="button button--primary" href="mailto:booking@djbellab.com">Book BELLA~B</a>
+              <a class="button button--ghost" href="mixtapes.html">Listen Now</a>
+            </div>
+            <p class="hero-proof">Recent appearances</p>
+            <ul class="hero-activity" aria-label="Recent appearances">
+              <li>Riot House</li>
+              <li>Club Vinyl</li>
+              <li>Milk Bar</li>
+              <li>Burning Man</li>
+            </ul>
+          </article>
 
-            <p class="sub">
-              High-energy dance music, sharp instincts, and a distinct point of view.
-              <strong>djbellab.com</strong> is getting a full buildout now.
-              Check back soon for mixes, releases, upcoming shows, and more.
-            </p>
-          </div>
-
-          <figure class="artist-photo-wrap" aria-label="Artist portrait">
+          <figure class="glass-panel hero-media hover-lift">
             <img
-              class="artist-photo"
               src="./assets/images/artist-image-placeholder.png"
-              alt="DJ Bella~B artist portrait"
+              alt="BELLA~B in performance lighting"
               loading="eager"
             />
           </figure>
         </div>
+      </section>
 
-        <div class="grid">
-          <div class="panel">
-            <h2>About</h2>
-            <p>
-              The B² / Bella~B sound is bold, confident, and club-ready — built for
-              people who care about selection, momentum, and presence behind the decks.
-              This site is the future home for her artist world online.
+      <div class="divider" role="presentation"></div>
+
+      <section class="section" id="releases">
+        <div class="container">
+          <header class="section-header reveal">
+            <span class="eyebrow">Recording Artist Feature</span>
+            <h2 class="display-title">Releases</h2>
+            <p class="lead">
+              Built for peak-time pressure — tracks that land hard and keep moving.
             </p>
-          </div>
+          </header>
 
-          <div class="panel">
-            <h2>Status</h2>
+          <div class="panel-grid reveal">
+            <article class="release-card hover-lift">
+              <figure class="release-media" aria-hidden="true"></figure>
+              <p class="meta">Featured / Upcoming</p>
+              <h3>SIGIL.ZERO</h3>
+              <p>Dark-room tech house with rolling low-end control and a late-switch synth crest.</p>
+              <p class="release-meta">Status: Final masters / Platform: Beatport + DSP rollout</p>
+              <a class="card-cta" href="releases.html">View Release</a>
+            </article>
+            <article class="release-card hover-lift">
+              <figure class="release-media" aria-hidden="true"></figure>
+              <p class="meta">Recent Promo Drop</p>
+              <h3>South Broadway Cut</h3>
+              <p>Peak-hour pressure tested across Denver club and afterhours environments.</p>
+              <p class="release-meta">Type: Club tool / Label: Independent promo servicing</p>
+              <a class="card-cta" href="releases.html">Open Details</a>
+            </article>
+            <article class="release-card hover-lift">
+              <figure class="release-media" aria-hidden="true"></figure>
+              <p class="meta">In Development</p>
+              <h3>Warehouse Passes</h3>
+              <p>Loop-forward sequence built for edits, remixes, and future label conversations.</p>
+              <p class="release-meta">Type: ID archive / Status: Arrangement pass in progress</p>
+              <a class="card-cta" href="releases.html">See Catalog</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider" role="presentation"></div>
+
+      <section class="section" id="mixtapes">
+        <div class="container">
+          <header class="section-header reveal">
+            <span class="eyebrow">DJ Feature</span>
+            <h2 class="display-title">Mixtapes</h2>
+            <p class="lead">Live energy, captured. No edits, no safety nets.</p>
+          </header>
+
+          <div class="panel-grid reveal">
+            <article class="mix-card hover-lift">
+              <figure class="mix-media" aria-hidden="true"></figure>
+              <h3>Rino Midnight Session</h3>
+              <p class="mix-meta">Denver Club Set / 1H 12M</p>
+              <p>Progressive pressure arc moving from restraint into full main-room lift.</p>
+              <a class="card-cta" href="mixtapes.html">Play Mixtape</a>
+            </article>
+            <article class="mix-card hover-lift">
+              <figure class="mix-media" aria-hidden="true"></figure>
+              <h3>Skyline Rooftop Tension</h3>
+              <p class="mix-meta">Rooftop Session / 56M</p>
+              <p>Sunset-to-night transition set with tight pacing and atmospheric control.</p>
+              <a class="card-cta" href="mixtapes.html">Play Mixtape</a>
+            </article>
+            <article class="mix-card hover-lift">
+              <figure class="mix-media" aria-hidden="true"></figure>
+              <h3>Afterhours Pressure Tape</h3>
+              <p class="mix-meta">Afterhours Room / 1H 24M</p>
+              <p>Dense groove stack tailored for late-room stamina and confident floor command.</p>
+              <a class="card-cta" href="mixtapes.html">Play Mixtape</a>
+            </article>
+            <article class="mix-card hover-lift">
+              <figure class="mix-media" aria-hidden="true"></figure>
+              <h3>Space Rave Control Pass</h3>
+              <p class="mix-meta">Live Environment / 48M</p>
+              <p>Fast-switch club architecture with direct transitions and high signal energy.</p>
+              <a class="card-cta" href="mixtapes.html">Play Mixtape</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider" role="presentation"></div>
+
+      <section class="section" id="calendar">
+        <div class="container">
+          <header class="section-header reveal">
+            <span class="eyebrow">Calendar</span>
+            <h2 class="display-title">Upcoming Performances</h2>
+          </header>
+
+          <ul class="event-row reveal">
+            <li>
+              <time datetime="2026-04-11">Apr 11</time>
+              <div class="event-main">
+                <strong>Late Shift Warehouse</strong>
+                <span>Venue: Riot House</span>
+              </div>
+              <span class="event-city">Denver</span>
+              <a class="event-link" href="mailto:booking@djbellab.com">Confirmed</a>
+            </li>
+            <li>
+              <time datetime="2026-05-03">May 03</time>
+              <div class="event-main">
+                <strong>East Side Session</strong>
+                <span>Venue: Signal Terrace</span>
+              </div>
+              <span class="event-city">Austin</span>
+              <a class="event-link" href="mailto:booking@djbellab.com">Guest Slot</a>
+            </li>
+            <li>
+              <time datetime="2026-05-24">May 24</time>
+              <div class="event-main">
+                <strong>Multi-Room Weekend Return</strong>
+                <span>Venue: Bar Standard</span>
+              </div>
+              <span class="event-city">Denver</span>
+              <a class="event-link" href="mailto:booking@djbellab.com">Headliner</a>
+            </li>
+            <li>
+              <time datetime="2026-06-07">Jun 07</time>
+              <div class="event-main">
+                <strong>Rooftop Sunset Control</strong>
+                <span>Venue: The Deckline</span>
+              </div>
+              <span class="event-city">Austin</span>
+              <a class="event-link" href="mailto:booking@djbellab.com">On Hold</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="divider" role="presentation"></div>
+
+      <section class="section" id="gallery">
+        <div class="container">
+          <header class="section-header reveal">
+            <span class="eyebrow">Gallery Preview</span>
+            <h2 class="display-title">Pics and Vids</h2>
+          </header>
+
+          <div class="gallery-grid gallery-strip reveal">
+            <figure class="gallery-tile glass-panel hover-lift">
+              <img src="./assets/images/artist-image-placeholder.png" alt="Riot House performance in Denver" loading="lazy" />
+              <figcaption class="meta">Riot House - Denver</figcaption>
+            </figure>
+            <figure class="gallery-tile glass-panel hover-lift">
+              <img src="./assets/images/artist-image-placeholder.png" alt="Bar Standard booth view in Denver" loading="lazy" />
+              <figcaption class="meta">Bar Standard - Denver</figcaption>
+            </figure>
+            <figure class="gallery-tile glass-panel hover-lift">
+              <img src="./assets/images/artist-image-placeholder.png" alt="Rooftop crowd at sunset" loading="lazy" />
+              <figcaption class="meta">Rooftop Set</figcaption>
+            </figure>
+            <figure class="gallery-tile glass-panel hover-lift">
+              <img src="./assets/images/artist-image-placeholder.png" alt="Afterhours dancefloor moment" loading="lazy" />
+              <figcaption class="meta">Afterhours Session</figcaption>
+            </figure>
+            <figure class="gallery-tile glass-panel hover-lift">
+              <img src="./assets/images/artist-image-placeholder.png" alt="Booth close-up during late set" loading="lazy" />
+              <figcaption class="meta">Booth Detail</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider" role="presentation"></div>
+
+      <section class="section" id="about">
+        <div class="container">
+          <header class="section-header reveal">
+            <span class="eyebrow">About BELLA~B</span>
+            <h2 class="display-title">Denver Roots, Austin Expansion</h2>
+          </header>
+
+          <article class="glass-panel about-preview reveal">
             <p>
-              New website in progress.<br />
-              Booking, music, and media hub coming soon.
+              BELLA~B moves like she’s already booked — because she is. What started in Denver’s late-night circuit turned into a rapid climb built on packed rooms, repeat sets, and a reputation for delivering exactly what the floor needs.
             </p>
-          </div>
+            <br/>
+            <p>
+              Now sharing energy between Denver and Austin, she’s pushing outward — tighter sets, heavier pressure, bigger rooms. No overthinking, no filler. Just movement, connection, and a sound that keeps people locked in longer than they planned.
+            </p>
+          </article>
         </div>
+      </section>
+    </main>
 
-        <div class="meta">
-          <span class="chip">Releases</span>
-          <span class="chip">Mixtapes</span>
-          <span class="chip">Calendar</span>
-          <span class="chip">Gallery</span>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p class="footer-note">BELLA~B — Denver-rooted, Austin-active. Built for momentum.</p>
+        <div class="socials" aria-label="Social links">
+          <a href="https://instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="https://soundcloud.com/" target="_blank" rel="noreferrer">SoundCloud</a>
+          <a href="https://facebook.com/" target="_blank" rel="noreferrer">Facebook</a>
         </div>
-
-        <a class="launch" href="mailto:hello@djbellab.com">Contact</a>
-
-        <div class="footer">
-          © 2026 DJ Bella~B / B² — All rights reserved.
-        </div>
+        <a class="button button--ghost" href="mailto:booking@djbellab.com">Booking</a>
       </div>
-    </section>
-  </main>
+    </footer>
+  </div>
 </body>
 </html>

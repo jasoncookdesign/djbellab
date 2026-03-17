@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DJ Bella~B | Coming Soon</title>
+  <meta
+    name="description"
+    content="Official site for DJ Bella~B / B². New site coming soon."
+  />
+  <style>
+    :root {
+      --bg: #090909;
+      --panel: rgba(255, 255, 255, 0.05);
+      --panel-strong: rgba(255, 255, 255, 0.08);
+      --text: #f5f5f5;
+      --muted: #b8b8c2;
+      --pink: #ff4fb3;
+      --pink-soft: #ff8bcc;
+      --silver: #c9c9cf;
+      --grey: #7f7f88;
+      --line: rgba(255, 255, 255, 0.12);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255, 79, 179, 0.18), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.08), transparent 30%),
+        linear-gradient(180deg, #111111 0%, #090909 100%);
+      color: var(--text);
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: 980px;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03)),
+        rgba(0,0,0,0.55);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(125deg, rgba(255, 79, 179, 0.10), transparent 28%, transparent 72%, rgba(201, 201, 207, 0.08)),
+        repeating-linear-gradient(
+          90deg,
+          transparent 0,
+          transparent 22px,
+          rgba(255,255,255,0.02) 22px,
+          rgba(255,255,255,0.02) 23px
+        );
+      pointer-events: none;
+    }
+
+    .inner {
+      position: relative;
+      z-index: 1;
+      padding: 44px 28px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      color: var(--silver);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--pink);
+      box-shadow: 0 0 16px rgba(255, 79, 179, 0.9);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 10vw, 5.8rem);
+      line-height: 0.92;
+      letter-spacing: -0.04em;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .name-main {
+      display: block;
+      color: #ffffff;
+    }
+
+    .name-accent {
+      display: block;
+      color: var(--pink);
+      text-shadow: 0 0 28px rgba(255, 79, 179, 0.25);
+    }
+
+    .sub {
+      max-width: 700px;
+      margin-top: 22px;
+      font-size: clamp(1rem, 2.6vw, 1.2rem);
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .hero-copy {
+      min-width: 0;
+    }
+
+    .artist-photo-wrap {
+      position: relative;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+      overflow: hidden;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      min-height: 360px;
+    }
+
+    .artist-photo-wrap::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 42%;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(9, 9, 9, 0.65));
+      pointer-events: none;
+    }
+
+    .artist-photo {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      object-fit: cover;
+      display: block;
+      transform: scale(1.02);
+    }
+
+    .photo-label {
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      z-index: 1;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.52);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--silver);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.74rem;
+      font-weight: 700;
+    }
+
+    .sub strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.95fr;
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .panel {
+      padding: 22px;
+      border-radius: 20px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+    }
+
+    .panel h2 {
+      margin: 0 0 10px;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--silver);
+      font-weight: 700;
+    }
+
+    .panel p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .launch {
+      display: inline-block;
+      margin-top: 26px;
+      padding: 14px 18px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, var(--pink), var(--pink-soft));
+      color: #14060f;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      box-shadow: 0 10px 24px rgba(255, 79, 179, 0.25);
+    }
+
+    .meta {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .chip {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--panel-strong);
+      border: 1px solid var(--line);
+      color: var(--silver);
+      font-size: 0.9rem;
+    }
+
+    .footer {
+      margin-top: 22px;
+      color: var(--grey);
+      font-size: 0.92rem;
+    }
+
+    .footer a {
+      color: var(--pink-soft);
+      text-decoration: none;
+    }
+
+    @media (max-width: 760px) {
+      .inner {
+        padding: 30px 20px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .artist-photo-wrap,
+      .artist-photo {
+        min-height: 300px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: clamp(2.4rem, 16vw, 4rem);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="inner">
+        <div class="eyebrow">
+          <span class="dot"></span>
+          Official site launching soon
+        </div>
+
+        <div class="hero">
+          <div class="hero-copy">
+            <h1>
+              <span class="name-accent">B²</span>
+              <span class="name-main">Bella~B</span>
+            </h1>
+
+            <p class="sub">
+              High-energy dance music, sharp instincts, and a distinct point of view.
+              <strong>djbellab.com</strong> is getting a full buildout now.
+              Check back soon for mixes, releases, upcoming shows, and more.
+            </p>
+          </div>
+
+          <figure class="artist-photo-wrap" aria-label="Artist portrait">
+            <img
+              class="artist-photo"
+              src="./assets/images/artist-image-placeholder.png"
+              alt="DJ Bella~B artist portrait"
+              loading="eager"
+            />
+          </figure>
+        </div>
+
+        <div class="grid">
+          <div class="panel">
+            <h2>About</h2>
+            <p>
+              The B² / Bella~B sound is bold, confident, and club-ready — built for
+              people who care about selection, momentum, and presence behind the decks.
+              This site is the future home for her artist world online.
+            </p>
+          </div>
+
+          <div class="panel">
+            <h2>Status</h2>
+            <p>
+              New website in progress.<br />
+              Booking, music, and media hub coming soon.
+            </p>
+          </div>
+        </div>
+
+        <div class="meta">
+          <span class="chip">Releases</span>
+          <span class="chip">Mixtapes</span>
+          <span class="chip">Calendar</span>
+          <span class="chip">Gallery</span>
+        </div>
+
+        <a class="launch" href="mailto:hello@djbellab.com">Contact</a>
+
+        <div class="footer">
+          © 2026 DJ Bella~B / B² — All rights reserved.
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
