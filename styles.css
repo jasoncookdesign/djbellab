@@ -1,3 +1,32 @@
+.socials {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.socials a:hover {
+  background-color: #DB27B0;
+  transform: scale(1.1);
+}
+
+.social-icon {
+  width: 1.4rem;
+  height: 1.4rem;
+}
 :root {
   --bg-0: #050505;
   --bg-0-rgb: 5, 5, 5;
@@ -512,14 +541,22 @@ img {
   margin: 0;
   border-radius: 12px;
   border: 1px solid var(--line-soft);
-  min-height: 128px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
   background:
     radial-gradient(120% 100% at 0% 0%, rgba(255, 57, 180, 0.22), transparent 55%),
     linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.02));
 }
 
 .mix-media {
-  min-height: 140px;
+  aspect-ratio: 1 / 1;
+}
+
+.release-media img,
+.mix-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .release-meta,
@@ -1018,13 +1055,20 @@ img {
 
 .mixtape-spotlight-art {
   margin: 0;
-  min-height: 360px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
   border-radius: 14px;
   border: 1px solid var(--line-soft);
   background:
     radial-gradient(115% 90% at 8% 0%, rgba(255, 57, 180, 0.24), transparent 64%),
     linear-gradient(150deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.02));
   transition: transform 380ms ease, box-shadow 240ms ease, border-color 240ms ease;
+}
+
+.mixtape-spotlight-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .mixtape-spotlight:hover .mixtape-spotlight-art,
@@ -1127,12 +1171,19 @@ img {
 .mixtape-thumb {
   margin: 0;
   border-radius: 11px;
-  min-height: 160px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
   border: 1px solid var(--line-soft);
   background:
     radial-gradient(110% 95% at 0% 0%, rgba(255, 57, 180, 0.2), transparent 60%),
     linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.02));
   transition: transform 340ms ease, filter 320ms ease;
+}
+
+.mixtape-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .mixtape-item:hover .mixtape-thumb,
