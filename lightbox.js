@@ -13,6 +13,43 @@
   var swipeStartX = 0;
   var lastFocused = null;
 
+  function getCardTargetLink(card) {
+    if (card.matches('.event-row li')) return card.querySelector('.event-link[href]');
+    return card.querySelector('.card-cta[href]');
+  }
+
+  function initHotCards() {
+    var hotCards = Array.from(document.querySelectorAll('.release-card, .mix-card, .event-row li'));
+
+    hotCards.forEach(function (card) {
+      var targetLink = getCardTargetLink(card);
+      if (!targetLink) return;
+
+      card.classList.add('is-hot-card');
+
+      if (!card.hasAttribute('tabindex')) {
+        card.setAttribute('tabindex', '0');
+      }
+
+      if (!card.hasAttribute('role')) {
+        card.setAttribute('role', 'link');
+      }
+
+      card.addEventListener('click', function (e) {
+        if (e.defaultPrevented) return;
+        if (e.target.closest('a, button, input, select, textarea, summary, [role="button"], [data-no-card-nav]')) return;
+        targetLink.click();
+      });
+
+      card.addEventListener('keydown', function (e) {
+        if (e.key !== 'Enter' && e.key !== ' ') return;
+        if (document.activeElement && document.activeElement.closest('a, button, input, select, textarea, summary, [role="button"]')) return;
+        e.preventDefault();
+        targetLink.click();
+      });
+    });
+  }
+
   function buildLightbox() {
     overlay = document.createElement('div');
     overlay.className = 'lb-overlay';
@@ -113,6 +150,8 @@
   }
 
   function init() {
+    initHotCards();
+
     images = Array.from(document.querySelectorAll(SELECTORS.join(', ')));
     if (!images.length) return;
 

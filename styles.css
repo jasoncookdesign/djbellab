@@ -588,6 +588,23 @@ img {
   text-shadow: var(--pink-glow-soft);
 }
 
+.release-card:hover .card-cta,
+.release-card:focus-within .card-cta,
+.mix-card:hover .card-cta,
+.mix-card:focus-within .card-cta {
+  color: var(--text-0);
+  border-color: var(--pink-strong);
+  text-shadow: var(--pink-glow-soft);
+}
+
+.event-row li:hover .event-link,
+.event-row li:focus-within .event-link {
+  border-color: var(--line-strong);
+  background: var(--surface-1);
+  box-shadow: var(--pink-glow-soft);
+  transform: translateY(-2px);
+}
+
 .media-card h3,
 .release-card h3,
 .mix-card h3,
@@ -711,29 +728,14 @@ img {
   transform: translateY(-2px);
 }
 
-/* Stretched-link: makes the whole card/row clickable */
-.release-card .card-cta,
-.mix-card .card-cta,
-.event-row li .event-link {
-  position: relative;
-  z-index: 1;
+/* Hot cards are click-anywhere targets on index lists */
+.is-hot-card {
+  cursor: pointer;
 }
 
-.release-card .card-cta::after,
-.mix-card .card-cta::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  border-radius: var(--radius-sm);
-}
-
-.event-row li .event-link::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  border-radius: 12px;
+.is-hot-card:focus-visible {
+  outline: 2px solid var(--pink-strong);
+  outline-offset: 2px;
 }
 
 .gallery-grid {
