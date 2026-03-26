@@ -194,6 +194,17 @@ img {
   max-width: 12ch;
 }
 
+.section-header:has(.section-header-row) {
+  max-width: none;
+}
+
+.section-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
 .lead {
   margin: 0;
   color: var(--text-1);
