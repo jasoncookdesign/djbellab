@@ -138,7 +138,7 @@ img {
 }
 
 .section {
-  padding: clamp(4rem, 7vw, 7rem) 0;
+  padding: clamp(1.5rem, 3vw, 3rem) 0;
 }
 
 .hero-stage {
