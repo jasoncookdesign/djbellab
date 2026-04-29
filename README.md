@@ -149,7 +149,7 @@ For each new or existing mix:
 
 #### Gallery
 
-**Every image in the gallery is a placeholder.** All `<img>` elements across `index.html` and `gallery.html` (including the hero image) reference `assets/gallery/artist-image-placeholder.png`. Real performance photography needs to be:
+**Every image in the gallery is a placeholder.** All `<img>` elements across `index.html` and `gallery.html` (including the hero image) reference `assets/gallery/artist-image-anime.png`. Real performance photography needs to be:
 
 1. Exported and placed in `assets/gallery/` using descriptive kebab-case filenames (e.g., `riot-house-denver-2026.jpg`).
 2. Referenced by updating the `src` and `alt` attributes of each `<img>` tag.
