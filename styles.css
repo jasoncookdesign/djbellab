@@ -1044,6 +1044,10 @@ img {
   overflow: hidden;
 }
 
+.spotlight-player iframe {
+  border-radius: 12px;
+}
+
 .release-links {
   display: flex;
   flex-direction: column;
