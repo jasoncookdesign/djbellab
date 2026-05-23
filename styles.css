@@ -871,7 +871,14 @@ img {
   display: grid;
   gap: 1rem;
   grid-template-columns: 1.3fr 1fr auto;
-  align-items: center;
+  align-items: end;
+}
+
+.footer-grid > div:not(.socials) {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.3rem;
 }
 
 .footer-note {
