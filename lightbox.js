@@ -19,7 +19,7 @@
   }
 
   function initHotCards() {
-    var hotCards = Array.from(document.querySelectorAll('.release-card, .mix-card, .event-row li'));
+    var hotCards = Array.from(document.querySelectorAll('.release-card, .mix-card, .release-index-card, .mixtape-item, .event-row li'));
 
     hotCards.forEach(function (card) {
       var targetLink = getCardTargetLink(card);
