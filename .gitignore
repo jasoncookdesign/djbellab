@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+
+# Editors/IDE
+.vscode/
+.idea/
+
+# Node/tooling (if used for local asset workflows)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.*
+
+# Build/cache artifacts
+dist/
+build/
+.cache/
+coverage/
