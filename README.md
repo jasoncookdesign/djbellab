@@ -7,8 +7,6 @@ Repository: <https://github.com/jasoncookdesign/djbellab>
 
 This repository contains the public website for BELLA~B. It is a static site deployed via GitHub Pages and built with hand-authored HTML, CSS, and a small vanilla JavaScript enhancement layer.
 
-The README was revised against commit history after the original README commit (`8faf100`) so it reflects shipped behavior that landed later (gallery content, calendar updates, lightbox interactions, release link updates, favicon support, and embedded Spotify player).
-
 ## Stack
 
 - HTML5 (multi-page static site)
@@ -44,7 +42,7 @@ There is no build step, package manager, or framework.
 
 - Gallery imagery is populated with multiple real photos across home and gallery pages.
 - Calendar entries on the homepage are populated (including dated listings and event links/contact CTAs).
-- `releases.html` includes an embedded Spotify player for "HerO Way".
+- `releases.html` includes an embedded Spotify player.
 - Release links were expanded to major platforms (Spotify, SoundCloud, YouTube Music, Apple Music, Amazon Music, Beatport, Bandcamp).
 - Homepage cards are keyboard/click navigable via `lightbox.js` "hot card" behavior.
 - Gallery has a functioning lightbox with keyboard and touch support.
