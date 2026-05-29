@@ -26,6 +26,9 @@
 .social-icon {
   width: 1.4rem;
   height: 1.4rem;
+  display: block;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 :root {
   --bg-0: #050505;
