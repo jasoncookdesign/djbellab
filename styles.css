@@ -687,7 +687,7 @@ img {
 .event-row li {
   position: relative;
   display: grid;
-  grid-template-columns: 8ch 1fr auto auto;
+  grid-template-columns: 13ch 1fr auto auto;
   gap: 0.8rem;
   align-items: center;
   padding: 0.85rem 1rem;
